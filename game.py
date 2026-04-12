@@ -15,17 +15,27 @@ class BlackjackGame:
         player.add_card(self.deck.draw())
         dealer.add_card(self.deck.draw())
 
-        while policy(player):
+        dealer_upcard = dealer.hand[0]
+
+        while True:
+            try:
+                action = policy(player, dealer_upcard)
+            except TypeError:
+                action = policy(player)
+
+            if not action:
+                break
+
             player.add_card(self.deck.draw())
-            
-            if player.is_bust() > 21:
-                return -1  # Player busts
+
+            if player.is_bust():
+                return -1
             
         while dealer.get_value() < 17:
             dealer.add_card(self.deck.draw())
 
-            if dealer.is_bust() > 21:
-                return 1  # Player wins
+            if dealer.is_bust():
+                return 1
         
         player_value = player.get_value()
         dealer_value = dealer.get_value()
