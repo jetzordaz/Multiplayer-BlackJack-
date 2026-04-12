@@ -16,7 +16,7 @@ class Hand:
 
         return total
     
-    def is_busted(self):
+    def is_soft(self):
         total = sum(self.hand)
         return 1 in self.hand and total + 10 <= 21
     
