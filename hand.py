@@ -20,5 +20,8 @@ class Hand:
         total = sum(self.hand)
         return 1 in self.hand and total + 10 <= 21
     
+    def is_bust(self):
+        return self.get_value() > 21
+    
     def is_blackjack(self):
         return len(self.hand) == 2 and self.get_value() == 21
