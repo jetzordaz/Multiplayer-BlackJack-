@@ -14,7 +14,7 @@ def main():
     }
 
     deck_types = ["infinite", "single"]
-    num_games = 1000  # increase to 500000 or 1M for final report
+    num_games = 1000000  # increase to 500000 or 1M for final report
 
     for deck_type in deck_types:
         print("\n===================================")
