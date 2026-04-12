@@ -9,6 +9,8 @@ def policy_1(hand):
 def policy_2(hand):
     value = hand.get_value()
     if value == 21: return False
+
     if value >= 17 and not hand.is_soft():
         return False
+    
     return True
