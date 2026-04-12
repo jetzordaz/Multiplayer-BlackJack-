@@ -10,7 +10,7 @@ def main():
         "Policy 2 (hard/soft 17)": policy_2,
         "Policy 3 (always stick)": policy_3,
         "Policy 4 (soft aggressive)": policy_4,
-        "Policy 5 (risk adaptive)": policy_5
+        "Policy 5 (dealer-aware)": policy_5
     }
 
     deck_types = ["infinite", "single"]
